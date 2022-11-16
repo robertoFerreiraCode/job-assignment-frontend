@@ -7,7 +7,7 @@ const Jobs = () => {
         name: string,
         startDate: string,
         endDate: string, 
-        temp: any;
+        temp: any; //use temp type
     };
 
     const [jobs, setJobs] = useState<Job[]>([]);
@@ -17,7 +17,7 @@ const Jobs = () => {
     }, [])
 
     const getJobs = async () => {
-        const response = await fetch("http://localhost:8080/jobs?assigned=false", {
+        const response = await fetch("/api/jobs?assigned=false", {
             headers: {
                 "Content-Type": "application/json", 
             }, 

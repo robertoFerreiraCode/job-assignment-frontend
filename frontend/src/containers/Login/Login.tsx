@@ -7,7 +7,7 @@ const Login = ({setId} : {setId: React.Dispatch<SetStateAction<number>>}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    
+    // use window.sessionStorage to store details
     const sendLoginRequest = async () => {
         const reqBody = {
             username: username,
