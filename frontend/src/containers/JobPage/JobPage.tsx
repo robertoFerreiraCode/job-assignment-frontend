@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { Temp } from "../../utilities/types";
 
 const JobPage = () => {
     const location = useLocation()
@@ -12,12 +13,6 @@ const JobPage = () => {
     useEffect(() => {
         getTemps();
     }, [])
-
-    type Temp = {
-        id: number,
-        firstName: string,
-        lastName: string,
-    };
 
     const getTemps = async () => {
         const response = await axios.get("/api/temps?jobId=" + job.id);

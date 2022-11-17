@@ -1,17 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Jobs from "../Jobs";
+import { Temp } from "../../utilities/types";
 
 const Temps = () => {
-    // refactor this
-    type Temp = {
-        id: number,
-        firstName: string,
-        lastName: string,
-        jobs: any[];
-    };
-
     const [temps, setTemps] = useState<Temp[]>([]);
     
     useEffect(() => {

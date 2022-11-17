@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { Job } from "../../utilities/types";
 const Jobs = () => {
-    type Job = {
-        id: number,
-        name: string,
-        startDate: string,
-        endDate: string, 
-        temp: any; //use temp type
-    };
-
     const [jobs, setJobs] = useState<Job[]>([]);
     
     useEffect(() => {
