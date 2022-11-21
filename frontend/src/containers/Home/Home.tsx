@@ -5,11 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Jobs from "../Jobs";
 import Login from "../Login"
 
-const Home = ({id} : {id: number}) => {
+const Home = () => {
     const navigate = useNavigate();
     useEffect(() => {
-        if (id == 0) navigate("/login");
-        console.log(id);
+        // if (id == 0) navigate("/login");
+        if (sessionStorage.length == 0) navigate("/login");
     }, [])
     return (
         <div>

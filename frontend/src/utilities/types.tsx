@@ -3,6 +3,8 @@ export type Temp = {
     firstName: string,
     lastName: string,
     jobs: Job[];
+    username: string,
+    password: string;
 };
 
 export type Job = {

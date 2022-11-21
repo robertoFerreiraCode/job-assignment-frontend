@@ -15,7 +15,8 @@ const JobPage = () => {
     }, [])
 
     const getTemps = async () => {
-        const response = await axios.get("/api/temps?jobId=" + job.id);
+        const response = await axios.get("/api/temps?jobID=" + job.id);
+        console.log(job.id);
         const data: Temp[] = response.data;
         setTemps(data);
     }

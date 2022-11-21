@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
 import Home from './containers/Home'
 import Login from './containers/Login';
 import Jobs from './containers/Jobs';
-import React from 'react';
+import Profile from './containers/Profile';
 import JobPage from './containers/JobPage';
 import Temps from './containers/Temps';
 import TempPage from './containers/TempPage';
@@ -26,6 +26,9 @@ const App = () => {
 						<li>
 							<Link to="/temps">Temps</Link>
 						</li>
+						<li>
+							<Link to="/profile">Profile</Link>
+						</li>
 					</ul>
 				</nav>
 				<Routes>
@@ -34,7 +37,8 @@ const App = () => {
 					<Route path="/jobs/:jobId" element={<JobPage/>}/>
 					<Route path="/temps" element={<Temps/>}/>
 					<Route path="/temps/:tempId" element={<TempPage/>}/>
-					<Route path="/" element={<Home id={id}/>}/>
+					<Route path="/profile" element={<Profile />}/>
+					<Route path="/" element={<Home/>}/>
 				</Routes>
 			</Router>
 	)
