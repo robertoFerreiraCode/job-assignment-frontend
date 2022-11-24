@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Temp } from "../../utilities/types";
+import { StyledForm } from "../../styles/Form.styled";
+import StyledContainer from "../../styles/Container.styled";
+
 const Profile = () => {
     const [temp, setTemp] = useState<Temp>();
     
@@ -47,43 +50,45 @@ const Profile = () => {
     //   }
 
     return (
-        <div>
-            <h1>Profile</h1>
-            <div>
-                <label>First Name:</label>
-                <input 
-                    id="firstName" 
-                    placeholder={temp?.firstName} 
-                    onChange={(e) => setFirstName(e.target.value)}
-                    // onChange={(e) => handleChange(e)}
-                ></input>
+        <StyledForm>
+            <div className="container">
+                <h2>Profile</h2>
+                <div className="form-group">
+                    <label>First Name:</label>
+                    <input 
+                        id="firstName" 
+                        placeholder={temp?.firstName} 
+                        onChange={(e) => setFirstName(e.target.value)}
+                        // onChange={(e) => handleChange(e)}
+                    ></input>
+                </div>
+                <div className="form-group">
+                    <label>Last Name:</label>
+                    <input 
+                        id="lastName" 
+                        placeholder={temp?.lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                    ></input>
+                </div>
+                <div className="form-group">
+                    <label>Username:</label>
+                    <input 
+                        id="username" 
+                        placeholder={temp?.username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    ></input>
+                </div>
+                <div className="form-group">
+                    <label>Password:</label>
+                    <input 
+                        id="password" 
+                        placeholder={temp?.password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    ></input>
+                </div>
+                <button id="submit" type="submit" onClick={handleSubmitDetails}>Submit</button>
             </div>
-            <div>
-                <label>Last Name:</label>
-                <input 
-                    id="lastName" 
-                    placeholder={temp?.lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                ></input>
-            </div>
-            <div>
-                <label>Username:</label>
-                <input 
-                    id="username" 
-                    placeholder={temp?.username}
-                    onChange={(e) => setUsername(e.target.value)}
-                ></input>
-            </div>
-            <div>
-                <label>Password:</label>
-                <input 
-                    id="password" 
-                    placeholder={temp?.password}
-                    onChange={(e) => setPassword(e.target.value)}
-                ></input>
-            </div>
-            <button id="submit" type="submit" onClick={handleSubmitDetails}>Submit</button>
-        </div>
+        </StyledForm>
     )
 }
 

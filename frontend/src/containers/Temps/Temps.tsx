@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Temp } from "../../utilities/types";
+import StyledContainer from "../../styles/Container.styled";
 
 const Temps = () => {
     const [temps, setTemps] = useState<Temp[]>([]);
@@ -17,16 +18,22 @@ const Temps = () => {
     }
 
     return (
-        <div>
-            <h1>Temps</h1>
-            <ul>
-                {temps.map((temp, index) => {
-                    return <li key={index}><Link 
-                        to={"/temps/" + temp.id}
-                        state={{ temp: temp }}>{temp.firstName + " " + temp.lastName}</Link></li>
-                })}
-            </ul>
-        </div>
+        <StyledContainer>
+            <div className="container">
+                <h1>Temps</h1>
+                <ul>
+                    {temps.map((temp, index) => {
+                        return <Link 
+                            to={"/temps/" + temp.id}
+                            state={{ temp: temp }}>
+                                <li key={index}>
+                                    {temp.firstName + " " + temp.lastName}
+                                </li>
+                            </Link>
+                    })}
+                </ul>
+            </div>
+        </StyledContainer>
     )
 }
 

@@ -1,6 +1,6 @@
 import { SetStateAction, useState } from "react";
-import { redirect, useNavigate } from "react-router-dom";
-import Home from "../Home";
+import { useNavigate } from "react-router-dom";
+import { StyledForm } from "../../styles/Form.styled";
 
 
 const Login = ({setId} : {setId: React.Dispatch<SetStateAction<number>>}) => {
@@ -28,14 +28,21 @@ const Login = ({setId} : {setId: React.Dispatch<SetStateAction<number>>}) => {
     }
 
     return (
-        <div>
-            <label>Username</label>
-            <input id="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
-            <label>Password</label>
-            <input type="password" id="password" value={password} 
-            onChange={(e) => setPassword(e.target.value)}></input>
-            <button type="button" id="submit" onClick={() => sendLoginRequest()}>Log in</button>
-        </div>
+        <StyledForm>
+            <div className="container">
+                <h2>Login</h2>
+                <div className="form-group">
+                    <label>Username</label>
+                    <input id="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
+                </div>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" value={password} 
+                onChange={(e) => setPassword(e.target.value)}></input>
+                </div>
+                <button type="button" id="submit" onClick={() => sendLoginRequest()}>Submit</button>
+            </div>
+        </StyledForm>
     )
 }
 
